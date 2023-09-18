@@ -10,6 +10,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"time"
 )
 
 // func main() {
@@ -22,9 +23,14 @@ import (
 // }
 
 func main() {
+	start := time.Now()
+
 	for i, arg := range os.Args {
 		fmt.Printf("%d: %s\n", i, arg)
 	}
+
+	elapsed := time.Since(start)
+	fmt.Printf("Tempo de execução: %v\n", elapsed)
 }
 
 //!-
